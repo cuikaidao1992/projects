@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>妙味课堂-JS4课练习-游戏：你的鼠标有多快？</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        img{border: none;vertical-align: top}
+        body { background:#f1f1f1; font-size:16px; user-select: none;font-family:"微软雅黑";cursor: pointer}
+        #box { width:800px; height:450px; border:1px solid #066; background:#FFF; margin:20px auto 0; position:relative; top:0; left:0;}
+        #mark { width:130px; border:1px solid #066; position:relative; top:-1px; left:-152px; background:#FFC; padding:10px; }
+        #mark p { margin:0;font-size:16px; line-height:30px; }
+        #header { text-align:center; }
+        #header p{line-height: 35px;}
+        input{width: 100px;height: 30px;}
+        #icon{width:25px;height: 25px;position: absolute;top:-25px;left: 0}
+        img{width: 25px;height: 25px;}
+        #content{width:800px; height:450px;overflow: hidden;position: absolute;top:0;left: 0}
+    </style>
+    <script src="js/common.js"></script>
+    <script>
+        function Games(){
+            this.t=0;
+            this.n=1;
+            this.ico=$("#icon");
+            this.box=$("#box");
+            this.aBtn=$("input");
+            this.aP=$("p",box);
+            this.onOff=true;
+        }
+        Games.prototype.random=function(obj){
+            this.r = Math.round(Math.random()*10) + 1;
+            this.ico.innerHTML = '<img src="images/' + this.r + '.png">';
+            this.l=Math.floor(Math.random() * 776);
+            obj.style.left = this.l + "px";
+        };
+        Games.prototype.watchScore = function (){
+            if( this.n >=20 ){
+                alert( "你赢了" );
+                this.reset();
+                return false;
+            }
+            if( this.t >=5 ){
+                alert( "你输了" );
+                this.reset();
+                return false;
+            }
+            return true;
+        };
+        Games.prototype.icoDrop=function(obj){
+            var _this=this;
+            this.ico.style.display = "block";
+            this.aBtn[0].value = "游戏进行中.....";
+            this.aBtn[0].disabled = true;
+            if(!obj.isStop){
+                this.random(obj);
+            }
+            if(_this.watchScore()){
+                doMove(obj,"top",426,this.n,function(){
+                    _this.t++;
+                    shake(_this.box,"left",15,function(){
+                        _this.ico.style.top=-25+"px";
+                        _this.icoDrop(_this.ico);
+                    });
+                    _this.aP[1].innerHTML = "失分：" + _this.t + " 分";
+                });
+            }
+        };
+        Games.prototype.reset=function(){
+            this.aBtn[0].value = "开始游戏";
+            this.aP[0].innerHTML = "得分：0 分";
+            this.aP[1].innerHTML = "失分：0 分";
+            this.aBtn[0].disabled = false;
+            this.onOff=true;
+            this.n = 1;
+            this.t = 0;
+        };
+
+        Games.prototype.icoShake=function(obj){
+            if(this.onOff==false)return;
+            var _this=this;
+            clearInterval(obj.timer);
+            this.onOff=false;
+            obj.timer = null;
+            this.ico.innerHTML = '<img src="images/bad.png">';
+            shake(obj,"left",10,function(){
+                _this.ico.style.top=-25+"px";
+                 _this.icoDrop(obj);
+                _this.onOff=true;
+
+            });
+            this.aP[0].innerHTML = "得分：" + this.n + " 分";
+            this.n++;
+        };
+        Games.prototype.suspend=function(obj){
+            clearInterval(obj.timer);
+            obj.timer = null;
+            this.aBtn[0].disabled = false;
+            this.aBtn[0].value = "开始游戏";
+            obj.isStop=true;
+            this.onOff=true;
+        };
+        window.onload=function(){
+            var aBtn=$("input");
+            var games = new Games();
+            var oIco=$("#icon");
+            aBtn[0].onclick=function(){
+                games.icoDrop(oIco)
+            };
+            oIco.onmousedown=function(){
+                games.icoShake(oIco);
+            };
+            aBtn[1].onclick=function(){
+                games.suspend(oIco);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="header">
+    <h2>你的鼠标有多快？</h2>
+    <p>游戏说明：点击“开始游戏”，随机掉下QQ表情，点中它，千万别让它掉下去！！</p>
+    <input type="button" value="开始游戏"/>
+    <input type="button" value="停止游戏">
+</div>
+<div id="box">
+    <div id="mark">
+        <p>得分：0 分</p>
+        <p>失分：0 分</p>
+    </div>
+    <div id="content">
+        <div id="icon"></div>
+    </div>
+</div>
+</body>
+</html>
