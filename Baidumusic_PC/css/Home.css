@@ -75,11 +75,10 @@ em{font-style:normal}
 .mod_focus_left img{width:580px;height:200px}
 .mod_focus_left #list{width: 200%;position: absolute;left:0;top: 0;}
 .mod_focus_left #list li{float: left;position: relative}
-
-.mod_focus_left .left_mask{width: 30px;height: 100px;background: #000;opacity:0.4;filter:alpha(opacity=40);position: absolute;top: 50px;left:-15px;border-radius: 5px;display: none}
-.mod_focus_left .right_mask{width: 30px;height: 100px;background: #000;opacity:0.4;filter:alpha(opacity=40);position: absolute;top: 50px;right:-15px;border-radius: 5px;display: none}
-.mod_focus_left .left_icon{width: 13px;height: 21px;background-position: -219px -44px;position: absolute;top: 90px;left: -6px;display: none}
-.mod_focus_left .right_icon{width: 13px;height: 21px;background-position: -232px -44px;position: absolute;top: 90px;right: -6px;display: none}
+.mod_focus_left .left_mask{width: 30px;height: 100px;background: #000;opacity:0.4;filter:alpha(opacity=40);position: absolute;top: 50px;left:0px;border-radius:5px;display: none}
+.mod_focus_left .right_mask{width: 30px;height: 100px;z-index: 2;background: #000;opacity:0.4;filter:alpha(opacity=40);position: absolute;top: 50px;right:0px;border-radius: 5px;display: none}
+.mod_focus_left .left_icon{width: 13px;height: 21px;background-position: -219px -44px;position: absolute;top: 90px;left: 5px;display: none}
+.mod_focus_left .right_icon{width: 13px;height: 21px;background-position: -232px -44px;position: absolute;top: 90px;right: 5px;display: none}
 .mod_focus_left .img:hover .left_icon{display: block}
 .mod_focus_left .img:hover .right_icon{display: block}
 .mod_focus_left .img:hover .left_mask{display: block}

@@ -1,15 +1,6 @@
 /**
  * Created by cuikaidao on 2016/3/2.
  */
-
-function $(selector,content){
-    if( selector.charAt(0) === "#" ){
-        return document.getElementById(selector.substring(1))
-    }else{
-        content = content || document;
-        return  content.getElementsByTagName(selector);
-    }
-}
 function getStyle(obj,attr){
     if( obj.currentStyle ){
         return obj.currentStyle[attr];
@@ -36,19 +27,30 @@ function doMove(obj,attr,target,speed,callBack){
 function addZero(n){
     return n < 10 ? "0"+n : n;
 }
-function getTimes(){
-    var d = new Date();
-    var H = d.getHours();
-    var Min = d.getMinutes();
-    var S = d.getSeconds();
-    var str =addZero(H)+":"+addZero(Min)+":"+addZero(S);
-    return str;
-}
 window.onload=function(){
-    var picList=$("#list");
-    var aImg=$("img",picList);
+    var picList=document.getElementById("list");
+    var aImg=picList.getElementsByTagName("img");
+    var p=picList.getElementsByTagName("p");
+    var aDiv=picList.getElementsByTagName("div");
     var n=0;
     var timer=null;
+    var data=[
+        {
+            title:"1.《琅琊榜》曾一度要在猴年春晚上“大聚首”。不过，以往年春晚经验来看，在除夕夜正式开始春晚直播之前，任何节目都有可能瞬息万变。"
+        },
+        {
+            title:"2.《琅琊榜》曾一度要在猴年春晚上“大聚首”。不过，以往年春晚经验来看，在除夕夜正式开始春晚直播之前，任何节目都有可能瞬息万变。"
+        },
+        {
+            title:"3.《琅琊榜》曾一度要在猴年春晚上“大聚首”。不过，以往年春晚经验来看，在除夕夜正式开始春晚直播之前，任何节目都有可能瞬息万变。"
+        },
+        {
+            title:"4.《琅琊榜》曾一度要在猴年春晚上“大聚首”。不过，以往年春晚经验来看，在除夕夜正式开始春晚直播之前，任何节目都有可能瞬息万变。"
+        },
+        {
+            title:"5.《琅琊榜》曾一度要在猴年春晚上“大聚首”。不过，以往年春晚经验来看，在除夕夜正式开始春晚直播之前，任何节目都有可能瞬息万变。"
+        }
+    ]
     var aPic=["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
     function play(){
         timer=setInterval(function(){
@@ -57,9 +59,17 @@ window.onload=function(){
                 n=0;
             }
             aImg[1].src=aPic[n];
-            doMove(picList,"left",-580,30,function(){
-                picList.style.left=0;
-                aImg[0].src=aImg[1].src;
+            p[1].innerHTML=data[n].title;
+            doMove(aDiv[0],"bottom",-80,10,function(){
+                doMove(picList,"left",-580,30,function(){
+                    doMove(aDiv[1],"bottom",0,10,function(){
+                        aDiv[0].style.bottom=0;
+                        aDiv[1].style.bottom=-80+"px";
+                        picList.style.left=0;
+                        aImg[0].src=aImg[1].src;
+                        p[0].innerHTML=p[1].innerHTML;
+                    })
+                })
             })
         },2000);
     }
@@ -71,7 +81,7 @@ window.onload=function(){
             var now = new Date();
             var t = (futureTime.getTime() - now.getTime())/1000;
             if( t <0 ){
-                alert("时间到了");
+                console.log("时间到了");
             }
             var D =  Math.floor(t/86400);
             var H =  Math.floor(t%86400/3600);
@@ -84,11 +94,10 @@ window.onload=function(){
                 if(time.charAt(i) !=""){
                     allSpan[i].innerHTML = time.charAt(i);
                 }
-
             }
         },1000)
-    var btn=$("#btn");
-    var aSpan=$("span",btn);
+    var btn=document.getElementById("btn");
+    var aSpan=btn.getElementsByTagName("span");
     aSpan[0].onmouseover=function(){
         clearInterval(timer);
         this.style.background="green"
@@ -111,6 +120,7 @@ window.onload=function(){
             n=aPic.length-1
         }
         aImg[0].src=aPic[n];
+        p[0].innerHTML=data[n].title;
     };
     aSpan[1].onclick=function(){
         n++;
@@ -118,5 +128,31 @@ window.onload=function(){
             n=0
         }
         aImg[0].src=aPic[n];
+        p[0].innerHTML=data[n].title;
     }
+    $(".userinf").each(function(index,item){
+        $(this).mouseover(function(){
+            var H=$(".aside").eq(index).offset().top+$(".aside").eq(index).height();
+            var h=$(document).scrollTop()+$(window).height();
+            if(H>h){
+                $(".aside").eq(index).css({
+                    top:-150
+                })
+            }else {
+                $(".aside").eq(index).css({
+                    top:30
+                })
+            }
+            $(".aside").eq(index).css({
+                opacity:1
+            })
+
+        }).mouseout(function(){
+            $(".aside").eq(index).css({
+                top:30,
+                opacity:0
+            })
+
+        })
+    })
 }

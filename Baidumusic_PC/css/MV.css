@@ -46,19 +46,23 @@ em{font-style:normal}
 .search_btn .mbox{float:right;width:109px;height:26px;line-height:26px;border:1px solid #226dbe;background:#fff;text-indent:35px;color:#000}
 .search_btn .tb{width:13px;height:13px;background-position:-170px -24px;position:absolute;top:16px;left:10px}
 .search_btn .tb1{width:15px;height:17px;background-position: 0 -27px;position:absolute;top:14px;right:85px}
-#img{width:980px;height:300px;margin:20px auto 0;position:relative}
+#img{width:980px;height:300px;margin:20px auto 0;position:relative;overflow: hidden}
+#img #list{width:200%;position:absolute;left:0;top: 0;}
+#list li{float: left}
 #img .bg_img .mask{height:72px;width:100%;background:#000;opacity:0.5;filter:alpha(opacity=50);position:absolute;left:0;bottom:0}
 #img .content{height:72px;width:100%;position:absolute;left:0;bottom:0}
 #img .content .left{float:left;line-height:72px}
 #img .content a:hover{text-decoration: underline;color: #fff}
-#img .content .left .play{width:30px;height:30px;background-position: -11px 0;position:absolute;bottom:26px;left:17px}
+#img .content .left .play{width:30px;height:30px;background-position: -11px 0;position:absolute;bottom:20px;left:17px}
 #img .content .left .play:hover{width:30px;height:30px;background-position:0 -57px}
 #img .content .left .title{color:#fff;font-size:24px;padding-left:73px}
 #img .content .right{float:right;width:467px;margin-right:21px;padding-top:9px;position:relative}
-#img .content .right .left-btn{width:8px;height:15px;background-position:0 0;position:absolute;bottom:18px;left:-17px}
-#img .content .right .right_btn{width:8px;height:15px;background-position:0 0;position:absolute;bottom:18px;right:-11px}
-.picList li{float:left;margin:0 4px 0 4px;width: 85px;display: inline;}
+#img .content .right .left-btn{width:8px;height:15px;background-position:0 0;position:absolute;bottom:-36px;left:-17px}
+#img .content .right .right_btn{width:8px;height:15px;background-position:0 -15px;position:absolute;bottom:-36px;right:-11px}
+.picList{position: relative}
+.picList li{width: 85px;position: absolute;left: 0;top:0;}
 .picList li img{width:85px;height:55px}
+.picList .active{border:3px solid red;margin: -3px}
 #recommend{width:100%;height:400px;background:#f8f8f8;border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6}
 #recommend a:hover{text-decoration: underline}
 #recommend .wrap{width:980px;margin:0 auto}

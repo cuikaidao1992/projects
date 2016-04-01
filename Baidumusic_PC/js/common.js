@@ -1,7 +1,6 @@
 /**
- * Created by cuikaidao on 2016/3/2.
+ * Created by cuikaidao on 2016/3/31.
  */
-
 function $(selector,content){
     if( selector.charAt(0) === "#" ){
         return document.getElementById(selector.substring(1))
@@ -32,23 +31,4 @@ function doMove(obj,attr,target,speed,callBack){
             obj.style[attr] = cur + "PX";
         }
     },30);
-}
-window.onload=function(){
-    var picList=$("#list");
-    var aImg=$("img",picList);
-    var n=0;
-    var aPic=["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg"];
-    setInterval(function(){
-        n++;
-        if(n>aPic.length-1){
-            n=0;
-        }
-        aImg[1].src=aPic[n];
-        doMove(picList,"left",-300,20,function(){
-            picList.style.left=0;
-            aImg[0].src=aImg[1].src;
-        })
-    },3000);
-
-
 }

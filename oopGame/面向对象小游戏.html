@@ -84,10 +84,10 @@
             obj.timer = null;
             this.ico.innerHTML = '<img src="images/bad.png">';
             shake(obj,"left",10,function(){
+                obj.isStop=false;
                 _this.ico.style.top=-25+"px";
                  _this.icoDrop(obj);
                 _this.onOff=true;
-
             });
             this.aP[0].innerHTML = "得分：" + this.n + " 分";
             this.n++;

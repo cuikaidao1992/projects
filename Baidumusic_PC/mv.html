@@ -5,6 +5,8 @@
     <title>MV</title>
     <script src="js/DD_belatedPNG_0.0.8a.js"></script>
     <script src="js/html5shiv.min.js"></script>
+    <script src="js/mv.js"></script>
+    <script src="js/common.js"></script>
     <link rel="stylesheet" href="css/MV.css"/>
     <script>
         DD_belatedPNG.fix('.bg');
@@ -82,24 +84,32 @@
     </section>
 </header>
 <section id="img">
-    <div class="bg_img">
-        <a href="#">
-            <img src="images/bj.jpg">
-            <span class="mask"></span>
-        </a>
-    </div>
+    <ul id="list">
+        <li class="bg_img" >
+            <a href="#">
+                <img src="images/bj1.jpg">
+                <span class="mask"></span>
+            </a>
+        </li>
+        <li class="bg_img" >
+            <a href="#">
+                <img src="images/bj2.jpg">
+                <span class="mask"></span>
+            </a>
+        </li>
+    </ul>
     <div class="content clearfix">
         <div class="left">
             <a href="#" class="title">TFBOYS-样（YOUNG</a>
             <a href="#" class="play bg_mv"></a>
         </div>
         <div class="right">
-            <a href="#" class="left-btn bg_mv"></a>
-            <a href="#" class="right_btn bg_mv"></a>
-            <ul class="picList clearfix">
-                <li>
+            <a href="#" class="left-btn bg_mv" id="left-btn"></a>
+            <a href="#" class="right_btn bg_mv" id="right_btn"></a>
+            <ul class="picList clearfix" id="picList">
+                <li class="active">
                     <a href="#" class="img">
-                        <img src="images/top1.jpg">
+                        <img src="images/top4.jpg">
                     </a>
                 </li>
                 <li>
@@ -109,17 +119,17 @@
                 </li>
                 <li>
                     <a href="#" class="img">
+                        <img src="images/bj3.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img">
                         <img src="images/top3.jpg">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="img">
-                        <img src="images/top4.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="img">
-                        <img src="images/top5.jpg">
+                        <img src="images/bj5.jpg">
                     </a>
                 </li>
             </ul>

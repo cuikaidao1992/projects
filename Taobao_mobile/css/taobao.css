@@ -18,17 +18,14 @@ body{margin:0;height:100%; overflow:hidden; position:relative;}
 .search{float: right;margin-right: 0.325rem;margin-top: 0.3rem}
 .search_text{float: right;width: 13.85rem;height:1.2rem;font-size:0.6rem;background: #af2500;border: none;border-radius: 0.25rem;text-align: center;color: #fff}
 .search_ico{width:0.7rem;height:0.7rem;background:url("../images/search_ico.png") no-repeat;background-size:0.7rem 0.7rem;position: absolute;top:0.575rem;left:5.9rem}
-#banner{width:16rem;height:4.93rem;position: relative}
+#banner{width:16rem;height:4.93rem;position: relative;}
 #banner img{width:16rem;height:4.93rem;}
 #banner .ico{width:2.45rem;height:0.85rem;background: url("../images/ndsd.png") no-repeat;background-size: 2.45rem 0.85rem;position: absolute;top: 0;left: 0}
 #banner nav{ position:absolute;right:0;bottom:.45rem;}
-#banner nav a{float:left;width:.4rem;height:.4rem; box-sizing:border-box;border:1px solid #000; margin:0 .25rem 0 .15rem; border-radius:0.2rem;background:#fff; opacity:.5;}
+#banner nav a{float:left;width:.4rem;height:.4rem; box-sizing:border-box;border:1px solid #000; margin:0 .25rem 0 .15rem; border-radius:0.2rem;background:#fff;}
 #banner nav .active{background:#f74c00}
-#banner #list{width: 200%;position: absolute;left:0;top: 0;}
+#banner #list{width: 500%;position: absolute;left:0;top: 0;transition:1s}
 #banner #list li{float: left;position: relative}
-
-
-
 #menu .banner{width:16rem;height:5.25rem;background: url("../images/banner2.png") no-repeat;background-size:16rem 5.25rem;}
 #main_nav .navList li{float: left;width: 2.4rem;margin: 0.32rem 0.54rem 0 1.05rem;text-align: center;}
 #main_nav .tianmao{display: block;width:1.95rem;height:1.95rem;background: url("../images/tm.png") no-repeat;background-size: 1.95rem 1.95rem;margin:0 auto}
