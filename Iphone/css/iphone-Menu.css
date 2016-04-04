@@ -1,0 +1,127 @@
+body, h1, h2, h3, h4, p, ul, dl, dd {
+    margin: 0;
+    padding: 0;
+    font: 12px "宋体"
+}
+a {
+    text-decoration: none
+}
+li {
+    list-style: none
+}
+img {
+    border: none;
+    vertical-align: top
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both
+}
+#wrap {
+    width: 281px;
+    height: 588px;
+    background: url("../images/iphone.jpg") no-repeat;
+    position: relative;
+    margin: 30px auto;
+    cursor: pointer
+}
+#iphone {
+    width: 237px;
+    height: 421px;
+    background: url("../images/wallpaper.jpg") no-repeat 0 0;
+    z-index: 2;
+    position: absolute;
+    left: 23px;
+    top: 84px
+}
+#status-bar {
+    width: 237px;
+    height: 15px;
+    background: url("../images/status.png") no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+#appList {
+    width: 237px;
+    height: 330px;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden
+}
+#appList li{
+    float: left;
+}
+#appList li p {
+    line-height: 20px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-family: Georgia, Times, serif;
+}
+#appList li img {
+    width: 53px;
+    height: 53px
+}
+.upleft {
+    position: relative;
+    left: -100px;
+    top: -20px;
+}
+.upright {
+    position: relative;
+    left: 280px;
+    top: -20px;
+}
+.downleft {
+    position: relative;
+    left: -100px;
+    top: 170px;
+}
+.downright {
+    position: relative;
+    left: 280px;
+    top: 170px;
+}
+#bottom {
+    width: 237px;
+    height: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.Menu-bg {
+    width: 237px;
+    height: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: grey;
+    opacity: .8;
+    z-index: 2
+}
+.Menu {
+    width: 237px;
+    height: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3
+}
+.Menu li {
+    float: left;
+    margin: 2px 2px 0 3px
+}
+.Menu li p {
+    line-height: 20px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-family: Georgia, Times, serif;
+}
+.Menu li img {
+    width: 54px;
+    height: 54px
+}
+#return{width: 50px;height: 50px;position: absolute;bottom:-65px;left:94px;border-radius:50%;z-index: 4;opacity: 0;}

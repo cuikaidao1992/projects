@@ -1,0 +1,460 @@
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+body, h1, h2, h3, h4, p, ul, dl, dd {
+    margin: 0;
+    padding: 0;
+    font: 12px "宋体"
+}
+
+a {
+    text-decoration: none
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: none;
+    vertical-align: top
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+#wrap {
+    width: 281px;
+    height: 588px;
+    background: url("../images/iphone.jpg") no-repeat;
+    position: relative;
+    margin: 30px auto;
+    cursor: pointer;
+    overflow: hidden
+}
+
+#iphone_box {
+    width: 237px;
+    height: 421px;
+    position: absolute;
+    left: 23px;
+    top: 84px;
+    overflow: hidden
+}
+
+#status-bar {
+    width: 237px;
+    height: 16px;
+    background-image: url("../images/status.png");
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3
+}
+
+#music {
+    width: 237px;
+    height: 421px;
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+
+#music .head {
+    width: 237px;
+    height: 40px;
+    background: url("../images/bg.png") repeat-x;
+    border-bottom: 1px solid #cccccc
+}
+
+#music .edit {
+    float: left;
+    padding: 5px 8px 5px 8px;
+    border: 1px solid #e2e2e2;
+    margin-top: 7px;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: #898989
+}
+
+#music .special {
+    float: left;
+    font-size: 18px;
+    line-height: 40px;
+    margin-left: 50px;
+}
+
+#music .disk {
+    float: right;
+    width: 34px;
+    height: 24px;
+    margin-right: 5px;
+    margin-top: 7px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px
+}
+
+#music .disk i {
+    width: 20px;
+    height: 20px;
+    background: url("../images/die.png") no-repeat;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 2px;
+}
+
+#music .control {
+    padding: 5px;
+    background: #f6f6f6;
+    border-bottom: 1px solid #cccccc
+}
+
+#music .loop {
+    float: left;
+    width: 30px;
+    height: 17px;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    background: url("../images/loop.png") no-repeat 10px 4px;
+}
+
+#music .style {
+    float: left;
+    width: 145px;
+    height: 17px;
+    border: 1px solid #cbcbcb;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+#music .style span {
+    width: 69px;
+    text-align: center;
+    line-height: 17px;
+    display: inline-block;
+    color: #82868d;
+    position: relative
+}
+
+#music .style .active {
+    border-right: 1px solid #e2e2e2;
+    background: #c7c7c7;
+    color: #fff
+}
+
+#music .list i {
+    width: 10px;
+    height: 12px;
+    display: inline-block;
+    background: url("../images/list.png") no-repeat;
+    position: absolute;
+    left: 9px;
+    top: 2px;
+}
+
+#music .tile i {
+    width: 10px;
+    height: 12px;
+    display: inline-block;
+    background: url("../images/tile.png") no-repeat;
+    position: absolute;
+    left: 9px;
+    top: 2px
+}
+
+#music .play {
+    float: right;
+    width: 30px;
+    height: 17px;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    background: url("../images/play.png") no-repeat 11px 3px;
+}
+
+#music-list li {
+    height: 35px;
+    padding: 8px 5px;
+    border-bottom: 1px solid #ebebeb
+}
+
+#music-list li .img {
+    float: left;
+    width: 35px;
+    height: 35px;
+}
+
+#music-list li p {
+    float: left
+}
+
+#music-list li span {
+    display: block;
+    margin-left: 10px;
+}
+
+#music-list .song {
+    font-size: 14px;
+    color: #353539;
+    line-height: 20px;
+    font-family: "微软雅黑"
+}
+
+#music-list .singer {
+    color: #a4a7ac
+}
+
+#music-list img {
+    width: 35px;
+    height: 35px
+}
+
+footer {
+    width: 237px;
+    height: 60px;
+    background: url("../images/ft_bg.png") repeat-x;
+    position: absolute;
+    bottom: 16px;
+    left: 0
+}
+
+.footList li {
+    float: left;
+    width: 79px;
+    height: 60px;
+}
+
+.footList .active {
+    background: url("../images/ac_bg.png") repeat-x;
+}
+
+.footList img {
+    width: 30px;
+    height: 26px;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+
+.footList p {
+    font-size: 16px;
+    color: #81858c;
+    text-align: center;
+    line-height: 32px
+}
+
+#play {
+    width: 237px;
+    height: 404px;
+    position: absolute;
+    top: 16px;
+    left: 240px;
+    background: #e1e0e0;
+    transition: 0.3s ease-in-out;
+}
+
+#play .head {
+    width: 227px;
+    height: 45px;
+    background: url("../images/play_head_bg.png") repeat-x;
+    padding: 0 5px;
+}
+
+#play .return {
+    width: 40px;
+    height: 20px;
+    border: 1px solid #202021;
+    float: left;
+    margin-top: 10px;
+    background: url("../images/return.png") no-repeat 12px 8px;
+    border-radius: 5px;
+}
+
+#play .head p {
+    float: left;
+    margin-left: 30px;
+    padding: 3px 0
+}
+
+#play .head p span {
+    display: block;
+    text-align: center
+}
+
+#play .song {
+    color: #f1f1f1;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    line-height: 24px;
+}
+
+#play .singer {
+    color: #a0a1a1
+}
+
+#play .grade {
+    float: right;
+    width: 40px;
+    height: 20px;
+    border: 1px solid #202021;
+    margin-top: 10px;
+    background: url("../images/grade.png") no-repeat 12px 6px;
+    border-radius: 5px;
+}
+
+#time {
+    width: 237px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    border-bottom: 1px solid #d9d8d8;
+}
+
+#time span {
+    font-family: "微软雅黑"
+}
+
+#play .course {
+    width: 150px;
+    height: 10px;
+    background: #bababa;
+    border-radius: 5px;
+    margin-top: 13px;
+    margin-left: 42px;
+}
+
+#play .play-time {
+    width: 35px;
+    line-height: 20px;
+    position: absolute;
+    left: 7px;
+    top: 9px;
+}
+
+#play .surplus {
+    width: 35px;
+    line-height: 20px;
+    position: absolute;
+    right: 0;
+    top: 9px;
+}
+
+#play .course i {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+#play .img {
+    width: 200px;
+    margin-left: 20px;
+    position: relative;
+    margin-top: 45px;
+}
+
+#play .logo {
+    width: 83px;
+    height: 83px;
+    position: absolute;
+    top: 53px;
+    left: 53px;
+    animation: 3s rotate linear infinite;
+    transform-origin: 41px 41px
+}
+
+#play .logo img {
+    width: 83px;
+    height: 83px;
+    border-radius: 50%
+}
+
+#play .point {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 84px;
+    left: 84px;
+    z-index: 3
+}
+
+#btn {
+    width: 172px;
+    position: absolute;
+    bottom: 55px;
+    left: 35px
+}
+
+#btn img {
+    vertical-align: middle
+}
+
+#play .prev img {
+    width: 50px;
+    height: 50px;
+    display: inline-block
+}
+
+#play .play img {
+    width: 60px;
+    height: 60px;
+    display: inline-block
+}
+
+#play .next img {
+    width: 50px;
+    height: 50px;
+    display: inline-block
+}
+
+#play .volume {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #cbcbcb;
+    background: url("../images/volume_bg.png") repeat-x;
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    border-radius: 5px;
+}
+
+#play .volume span {
+    width: 180px;
+    height: 8px;
+    display: inline-block;
+    background: #c9c8c8;
+    margin-top: 6px;
+    margin-left: 10px;
+}
+
+#play .volume i {
+    width: 17px;
+    height: 26px;
+    position: absolute;
+    bottom: -2px;
+    left: 10px;
+    background: url("../images/volume_btn.png") no-repeat
+}
+#return{width: 50px;height: 50px;position: absolute;bottom:18px;left:117px;border-radius:50%;z-index: 4;opacity: 0;}
+
+
+
+
+
+
+

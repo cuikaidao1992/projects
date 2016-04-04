@@ -1,0 +1,59 @@
+body,h1,h2,h3,h4,p,ul,dl,dd{margin:0;padding:0;font:12px "微软雅黑"}
+a{text-decoration:none}
+li{list-style:none}
+img{border:none;vertical-align:top}
+.clearfix:after{content: "";display:block;clear:both}
+#wrap{width:281px;height:588px;background:url("../images/iphone.jpg") no-repeat;position: relative;margin: 30px auto;cursor: pointer}
+#status-bar{width:237px;height: 16px;background-image:url("../images/status.png");background-color:#12b7f5;position: absolute;left:23px;top:85px}
+#type{width: 237px;position: absolute;top:100px;left: 23px;}
+#type .head{height: 30px;background: #12b7f5;padding:10px 0 2px;margin-bottom: 5px;}
+#type .user{float:left;width: 24px;height: 24px;background: url("../images/user.png") no-repeat;display: inline-block;margin-left: 10px;}
+#contactor{display: none}
+.contacts{float:left;width:50px;line-height: 20px;padding-left:70px;font-size: 16px;color: #fff;font-weight: bold}
+.add{float: right;margin-right: 10px;line-height: 20px;color: #fff;}
+.search{width:220px;line-height: 20px;border-radius:5px;background: #f3f3f3;margin:0 auto}
+.sea_text{width: 20px;padding-left: 110px;color: #a7a7a7;position: relative}
+.ico{width:15px;height:15px;background: url("../images/sea_ico.png") no-repeat ;display: inline-block;position: absolute;top:1px;left: 90px}
+.M_list{margin:10px 10px 0 10px;}
+.M_list li{float: left;}
+.M_list .img{padding: 23px;}
+.M_list .title{text-align: center;line-height: 25px;}
+.M_list .title a{color: #010101}
+#content{background: #f8f9fa;padding-top: 15px;height: 220px;overflow:auto}
+#self{background: #fff;margin-bottom: 15px;}
+#qqGroup{height:100px;background: #fff;}
+.list li h3{line-height: 20px;position:relative;border-bottom: 1px solid #dedfe0;font-weight: bold;padding-left: 25px;font-size: 14px}
+.list ul li{border-bottom: 1px solid #dedfe0;line-height: 25px;padding-left: 20px}
+.list i{width:7px;height:10px;background: url("../images/close.png")no-repeat;position: absolute;left: 9px;top:6px;}
+.list ul li:hover{background:green;}
+.list li ul{display: none}
+.list li ul .active{background: red}
+#mesList li{height:40px;border-bottom: 1px solid  #dedfe0;}
+#mesList li p{float:left;line-height: 40px;font-size: 14px;}
+#mesList li:hover{background: gold}
+#mesList li img{width: 25px;height: 25px;border-radius:50%;float: left;margin-left: 10px;margin-right: 10px;margin-top: 10px;}
+.message{float:left;color:#Fff;width: 70px;border: 1px solid #fff;border-radius: 5px;margin-left:50px;line-height: 20px;}
+.message .active{width:35px;background: #fff;line-height: 20px;display: inline-block;color:#00b7fb;text-align: center}
+.dyn{float:left;width:50px;line-height: 20px;padding-left:70px;font-size: 16px;color: #fff;font-weight: bold}
+.more{float: right;margin-right: 10px;line-height: 20px;color: #fff;}
+#dynamic{display: none}
+#other-inf{background: #f9f9fb;padding-top: 20px;}
+#top-list{margin-bottom: 20px;background: #fff}
+#top-list li{padding: 0 10px;height: 35px;border-bottom: 1px solid #dedfe0}
+#top-list .img{float: left;margin-right: 10px;margin-top: 10px;}
+#top-list p{float: left;line-height: 35px;}
+#bottom-List{background: #fff}
+#bottom-List li{padding: 0 10px;height:35px;border-bottom: 1px solid #dedfe0}
+#bottom-List .img{float: left;margin-right: 10px;margin-top: 10px;}
+#bottom-List p{float: left;line-height: 35px;}
+footer{width:217px;height: 50px;position: absolute;bottom:85px;left: 23px;padding:0 10px;}
+footer div{float: left;width: 72px;text-align: center;position: relative}
+footer div span{color: #828396;font-size: 14px;padding-top:30px;display: inline-block;font-weight: bold;line-height: 20px;}
+footer div .active{color: #00b7fb;}
+#mse i{width: 20px;height: 20px;background: url("../images/mse.png") no-repeat;position: absolute;left:26px;top:4px;}
+#cnt i{width: 20px;height: 20px;background: url("../images/cnt.png") no-repeat;position: absolute;left:26px;top:4px;}
+#dnc i{width: 20px;height: 20px;background: url("../images/dnc.png") no-repeat;position: absolute;left:26px;top:4px;}
+#return{width: 50px;height: 50px;position: absolute;bottom:18px;left:117px;border-radius:50%;z-index: 4;opacity: 0}
+
+
+

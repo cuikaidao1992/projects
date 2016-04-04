@@ -55,7 +55,7 @@ window.onload=function(){
                 aLLA[j].className="next bg"
             }
             aLLA[n].className="current bg";
-            doMove(picList,"left",-400,30,function(){
+            doMove(picList,"left",-700,30,function(){
                 picList.style.left=0;
                 aImg[0].src=aImg[1].src;
             })

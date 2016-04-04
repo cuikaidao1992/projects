@@ -1,0 +1,13 @@
+body,h1,h2,h3,h4,p,ul,dl,dd{margin:0;padding:0;font:12px "宋体"}
+a{text-decoration:none}
+li{list-style:none}
+img{border:none;vertical-align:top}
+.clearfix:after{content: "";display:block;clear:both}
+#wrap{width:281px;height:588px;background:url("../images/iphone.jpg") no-repeat;position: relative;margin: 30px auto;cursor: pointer}
+#iphone{width: 237px;height: 421px;background:url("../images/wallpaper.jpg") no-repeat 0 0;z-index: 2;position: absolute;left: 23px;top:84px}
+#status-bar{width:237px;height: 15px;background:url("../images/status.png") no-repeat;position: absolute;left: 0;top:0}
+#iphone #video{position: absolute;top:40px;left: 0}
+.video{-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent) , to(rgba(255,255, 255, 0.5)));}
+#return{width: 50px;height: 50px;position: absolute;bottom:-65px;left:94px;border-radius:50%;z-index: 4;opacity: 0;}
+
+

@@ -1,0 +1,38 @@
+body,h1,h2,h3,h4,p,ul,dl,dd{margin:0;padding:0;font:12px "宋体"}
+a{text-decoration:none}
+li{list-style:none}
+img{border:none;vertical-align:top}
+.clearfix:after{content: "";display:block;clear:both}
+#wrap{width:281px;height:588px;background:url("../images/iphone.jpg") no-repeat;position: relative;margin: 30px auto;cursor: pointer}
+#iphone{width: 237px;height: 421px;background: #efeff0;position: absolute;left: 23px;top:84px}
+#status-bar{width:237px;height: 16px;background-image:url("../images/status.png");background-color:#12b7f5;position: absolute;left:0;top:0}
+nav{width:237px;position: absolute;bottom:6px;left:0;}
+.list > li{float: left;width:59px;text-align: center}
+#number{position: absolute;bottom:60px;left: 20px}
+#phone_num li{float: left;width:45px;line-height:45px;border: 1px solid #000;margin:5px 10px;text-align: center;border-radius: 50%;font-size: 20px;background: #fff}
+#text{text-indent:1em;line-height: 25px;width: 170px;border-radius:5px;margin-bottom:10px;margin-left: -30px;border: none;letter-spacing:3px;font-size: 16px;}
+.del{width: 20px;height: 14px;display:block;background: url("../images/del.png") no-repeat;position: absolute;top:8px;right: 10px;}
+.phone_call{width: 50px;height: 50px;background:url("../images/phone_phone.png") no-repeat;margin-left:75px;margin-top:5px;}
+.call_num i{width: 25px;height: 35px;background: url("../images/phone_close.png") no-repeat;display:block;margin-left: 18px;}
+.collect i{width: 25px;height: 35px;background: url("../images/sc.png") no-repeat;display:block;margin-left: 18px;}
+.recent_call i{width: 25px;height: 35px;background: url("../images/zjth.png") no-repeat;display:block;margin-left: 18px;}
+.contact i{width: 25px;height: 35px;background: url("../images/txl.png") no-repeat;display:block;margin-left: 18px;}
+#return{width: 50px;height: 50px;position: absolute;bottom:-65px;left:94px;border-radius:50%;z-index: 4;opacity: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+body,h1,h2,h3,h4,p,ul,dl,dd{margin:0;padding:0;font:12px "宋体"}
+a{text-decoration:none}
+li{list-style:none}
+img{border:none;vertical-align:top}
+.clearfix:after{content: "";display:block;clear:both}
+.bg{ background:url(../images/image.png) no-repeat}
+#wrap{width:281px;height:588px;background:url("../images/iphone.jpg") no-repeat;position: relative;margin: 30px auto;cursor: pointer;overflow: hidden}
+#iphone{width: 237px;height: 421px;position: absolute;left: 23px;top:84px}
+#status-bar{width:237px;height: 16px;background-image:url("../images/status.png");background-color:#000;position: absolute;left:23px;top:85px;z-index: 3}
+#subject{position: absolute;top:100px;left:23px;}
+#subject .head{width: 223px;;padding: 7px;background: #efeff0}
+#text{width: 220px;line-height: 20px;border: 1px solid #bfbfc0;color: #b0b0b0;text-indent:2em}
+.logo{width: 15px;height: 15px;background-position: -108px 0;position: absolute;left:15px;top:11px;}
+.sao {width: 16px;height: 14px;background-position: -88px 0;position: absolute;right:15px;top:12px;}
+.temp{width:30px;height:34px;background-position: 0 -22px;position: absolute;top:47px;left:15px}
+.top-head p{padding:4px 0 4px 50px}
+.top-head p span{display: block;line-height: 20px;}
+.search{padding:5px 0 5px;position: relative}
+#search_text{float: left;width: 160px;height:20px;border: 1px solid #6ea7fa;margin-left: 15px;color: #bbbbbb;text-indent:0.5em}
+#btn{float: left;height:24px;width:45px;margin-left: -1px;border: 1px solid #6ea7fa;background: #6ea7fa;color: #fff;}
+.navList{height:50px;}
+.navList li{float: left;padding:30px 15px 0 20px;position: relative}
+.news i{width: 18px;height: 18px;background-position: 0 0;position: absolute;left:23px;top:7px}
+.novel i{width: 18px;height: 18px;background-position: -22px 0;position: absolute;left:23px;top:7px}
+.app i{width: 18px;height: 18px;background-position: -44px 0;position: absolute;left:23px;top:7px}
+.video i{width: 18px;height: 18px;background-position: -65px 0;position: absolute;left:23px;top:7px}
+.navList span{color:#333}
+#navUrl{width:237px;height:210px;background: #efeff0;padding:7px 0 10px}
+.urlList{background: #fff;padding-bottom:15px;}
+.urlList li{float: left;padding:0 9px 0 14px;position: relative;}
+.urlList a{width: 36px;display: block;padding-top: 35px;text-align: center}
+.urlList span{color: #363636;}
+.urlList i{width: 20px;height: 20px;position: absolute;top:8px;left:20px}
+.baidu i{background-position:0 -61px}
+.tengxun i{background-position:-26px -61px}
+.souhu i{background-position:-53px -61px}
+.tiaomao i{background-position:-79px -61px}
+.haodian i{background-position:-106px -61px}
+.yougou i{background-position:0 -88px}
+.meituan i{background-position:-26px -88px}
+.suning i{background-position:-53px -88px}
+.yamaxun i{background-position:-79px -88px}
+.jingdong i{background-position:-106px -88px}
+.tuniu i{background-position:0 -115px}
+.xiecheng i{background-position:-26px -115px}
+.chezhiyou i{background-position:-53px -115px}
+.anjuke i{background-position:-79px -115px}
+.more i{background-position:-106px -115px}
+.kan i{background-position:0 -142px}
+#search_list{width: 155px;position: absolute;top:115px;left:20px;background:#fff;overflow: hidden;display: none}
+#search_list li{line-height: 20px;}
+#search_list li a{color: #000;font-weight: bold}
+#search_list li:hover{background: #ff6d01}
+#return{width: 50px;height: 50px;position: absolute;bottom:18px;left:117px;border-radius:50%;z-index: 4;opacity: 0}
