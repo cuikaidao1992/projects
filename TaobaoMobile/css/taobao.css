@@ -24,7 +24,7 @@ body{margin:0;height:100%; overflow:hidden; position:relative;}
 #banner nav{ position:absolute;right:0;bottom:.45rem;}
 #banner nav a{float:left;width:.4rem;height:.4rem; box-sizing:border-box;border:1px solid #000; margin:0 .25rem 0 .15rem; border-radius:0.2rem;background:#fff;}
 #banner nav .active{background:#f74c00}
-#banner #list{width: 500%;position: absolute;left:0;top: 0;transition:1s}
+#banner #list{width: 800%;position: absolute;left:0;top: 0}
 #banner #list li{float: left;position: relative}
 #menu .banner{width:16rem;height:5.25rem;background: url("../images/banner2.png") no-repeat;background-size:16rem 5.25rem;}
 #main_nav .navList li{float: left;width: 2.4rem;margin: 0.32rem 0.54rem 0 1.05rem;text-align: center;}
