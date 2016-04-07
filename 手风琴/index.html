@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+
+        li {
+            list-style: none;
+        }
+
+        ul, li {
+            padding: 0;
+            margin: 0;
+        }
+
+        .fold_wrap {
+            width: 1200px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .fold_wrap ul {
+            width: 1200px;
+            height: 260px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .fold_wrap ul li {
+            float: left;
+            width: 130px;
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-2.2.2.min.js"></script>
+    <script>
+        window.onload = function () {
+            var sm = $("#sm");
+            var lis = sm.find("li");
+            var len = lis.length;
+            var W = sm.width();
+            var imgW = 400;
+            var otherImg = Math.floor((W - imgW) / (len - 1));
+            var liW = W / len;
+            var timer = null;
+            var timer2 = null;
+            lis.on("mouseover", function () {
+                var _this = this;
+                clearInterval(timer2);
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    fn(_this);
+                },30);
+            });
+            lis.each(function(){
+                $(this).css("width",liW);
+            })
+            /*timer = setInterval(function () {
+                fn(lis[0]);
+            },30);*/
+            function fn(_this) {
+                var cw=$(_this).width();
+                if (cw < 400) {
+                    var owt = 0;
+                    lis.each(function(index,item){
+                        if (item !== _this) {
+                            var oW = $(item).width(), speed = 0;
+                            if (oW > otherImg) {
+                                speed = Math.floor((oW - otherImg) / 5);
+                                speed = (speed > 0) ? speed : 1;
+                                $(this).css("width",(oW - speed));
+                            }
+                            owt = owt + ( oW - speed);
+                        }
+                    });
+                    var abc = W - owt;
+                    if (abc > 400) abc = 400;
+                    $(_this).css("width",abc)
+                } else {
+                    clearInterval(timer2);
+                    clearInterval(timer)
+                }
+            }
+            lis.on("mouseout", function () {
+                var _this = this;
+                clearInterval(timer2);
+                clearInterval(timer);
+                timer2 = setInterval(function () {
+                    var cw = $(_this).width();
+                    if (cw > liW) {
+                        var owt = 0;
+                        lis.each(function(index,item){
+                            if (this !== _this) {
+                                var oW = $(this).width(), speed = 0;
+                                if (oW < liW) {
+                                    speed = Math.floor((liW - oW) /5);
+                                    speed = (speed > 0) ? speed : 1;
+                                    $(this).css("width",(oW + speed));
+                                }
+                                owt = owt + ( oW + speed);
+                            }
+                            $(_this).css("width",W - owt)
+                        });
+                    } else {
+                        clearInterval(timer2);
+                        clearInterval(timer)
+                    }
+                }, 30);
+            });
+        };
+    </script>
+</head>
+
+<body>
+<div class="fold_wrap">
+    <ul class="clearfix" id="sm">
+        <li>
+            <img src="image/1.jpg">
+        </li>
+        <li>
+            <img src="image/2.jpg">
+        </li>
+        <li>
+            <img src="image/3.jpg">
+        </li>
+        <li>
+            <img src="image/4.jpg">
+        </li>
+        <li>
+            <img src="image/5.jpg">
+        </li>
+        <li>
+            <img src="image/6.jpg">
+        </li>
+        <li>
+            <img src="image/7.jpg">
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>瀑布流</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            background: #000 url(img/body.jpg) no-repeat 0 center fixed;
+            font-family: '微软雅黑';
+        }
+
+        .clear:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        #box {
+            width: 980px;
+            margin: 0 auto;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        #info {
+            width: 200px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+
+        #content {
+            float: right;
+            width: 760px;
+            position: relative;
+        }
+
+        #info h1 {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #info h1 img {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            margin: -42px 0 0 -60px;
+        }
+
+        #info h2 {
+            margin-left: 40px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        #info h3 {
+            margin-left: 40px;
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 50px;
+        }
+
+        #menu {
+            width: 154px;
+            margin: 0 auto;
+            position: relative;
+            left: 20px;
+        }
+
+        #menu ul {
+            position: relative;
+            z-index: 1;
+        }
+
+        #menu li {
+            line-height: 40px;
+            text-indent: 20px;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        #menu p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            transition: 0.3s;
+            border-left: 4px solid #ccc;
+        }
+
+        .list ul {
+            width: 370px;
+            float: left;
+            padding-right: 10px;
+        }
+
+        .list li {
+            padding: 20px 0;
+            background: #fff;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .list .pic,
+        .list h2,
+        .list p {
+            width: 330px;
+            margin: 0 auto;
+        }
+
+        .list .pic {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .list .pic img {
+            width: 330px;
+            cursor: pointer;
+        }
+
+        .list h2 {
+            font-size: 14px;
+            padding-bottom: 5px;
+        }
+
+        .list h2 a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .list h2 a:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        .list p {
+            overflow: hidden;
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        .list p strong {
+            float: left;
+        }
+
+        .list p span {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+<div id="box" class="clear">
+    <div id="content">
+        <div id="list" class="list">
+            <ul>
+                <!-- <li>
+                    <div class="pic"><img src="img/a3.jpg" /></div>
+                    <h2><a href="#">这是第一节课练习：幻灯片1</a></h2>
+                    <p>
+                        <strong>2015-3-15</strong>
+                        <span>15:32:12</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="pic"><img src="img/a2.jpg" /></div>
+                    <h2>这是第一节课练习：幻灯片1</h2>
+                    <p>
+                        <strong>2015-3-15</strong>
+                        <span>15:32:12</span>
+                    </p>
+                </li> -->
+            </ul>
+            <ul>
+                <!-- <li>
+                    <div class="pic"><img src="img/a1.jpg" /></div>
+                    <h2>这是第一节课练习：幻灯片1</h2>
+                    <p>
+                        <strong>2015-3-15</strong>
+                        <span>15:32:12</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="pic"><img src="img/a4.jpg" /></div>
+                    <h2>这是第一节课练习：幻灯片1</h2>
+                    <p>
+                        <strong>2015-3-15</strong>
+                        <span>15:32:12</span>
+                    </p>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="date2.js"></script>
+<script>
+    var uls = list.getElementsByTagName("ul");
+    function render(parentBox, data) {
+        var str = "";
+        for (var i = 0; i < data.length; i++) {
+            str += '<li>'
+                    + '<div class="pic"><img src="1.gif" _src="'+data[i].src+'" /></div>'
+                    + '<h2>' + data[i].title + '</h2>'
+                    + '<p>'
+                    + '<strong>' + data[i].date + '</strong>'
+                    + '<span>' + data[i].time + '</span>'
+                    + '</p>'
+                    + '</li>';
+        }
+        parentBox.innerHTML += str;
+    }
+    render(uls[0], arrDate1);
+    render(uls[1], arrDate2);
+    function fn() {
+        for (var i = 0; i < uls.length; i++) {
+            var lastElement = uls[i].lastElementChild;
+            if (isArea(lastElement)) {
+                render(uls[i],arrDate2);
+            }
+        }
+    }
+    function isabc(){
+        for( var j = 0; j < uls.length; j++ ){
+            var li = uls[j].children;
+            for( var i = 0; i < li.length; i++ ){
+                var oImg = li[i].getElementsByTagName("img")[0];
+                var src = oImg.getAttribute("_src");
+                if( src ){
+                    if( isArea(li[i]) ){
+                        setTimeout(function (oImg,src){
+                            oImg.src = src;
+                            oImg.removeAttribute("_src")
+                        },300,oImg,src);
+                    }
+                }
+            }
+        }
+    }
+    isabc()
+    function isArea(obj) {
+        var objTop = obj.getBoundingClientRect().top;
+        var clientH = document.documentElement.clientHeight;
+        if (objTop < clientH) {
+            return true
+        }
+    }
+    window.onscroll = function () {
+        fn();
+        isabc()
+    };
+
+</script>
+
+</body>
+
+</html>
