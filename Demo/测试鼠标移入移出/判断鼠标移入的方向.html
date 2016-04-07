@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+    #box {
+        width: 200px;
+        height: 200px;
+        background: red;
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        text-align: center;
+        font-size: 20px;
+        color: #fff;
+    }
+    </style>
+    <script src="jquery-2.2.2.min.js"></script>
+    <script>
+    $(function() {
+        $("#box").bind("mouseenter mouseleave", function(e) {
+            var w = $(this).width();
+            var h = $(this).height();
+            var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+            var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ?
+                (w / h) : 1);
+            var direction = Math.round((((Math.atan2(y, x) * (180 /
+                Math.PI)) + 180) / 90) + 3) % 4;
+            	console.log(y, x, Math.atan2(y, x) , (Math.atan2(y, x) * (180 / Math.PI))+180 );
+                //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+            var eventType = e.type;
+            var dirName = new Array('上方', '右侧', '下方', '左侧');
+            if (e.type == 'mouseenter') {
+                $(this).html("测试：" + dirName[direction] + '进入');
+               //console.log("测试：" + dirName[direction] + '进入');
+            } else {
+                $(this).html("测试：" + dirName[direction] + '离开');
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
