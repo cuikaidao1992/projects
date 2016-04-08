@@ -1,28 +1,46 @@
-/**
- * Created by cuikaidao on 2016/3/26.
- */
+function changeTime(iNum) {
+    iNum = parseInt(iNum);
+    var iM = zero(Math.floor(iNum % 3600 / 60));
+    var iS = zero(Math.floor(iNum % 60));
+    return iM + ':' + iS;
+}
+function nowTime(){
+    $(".play-time").html(changeTime(mp3.currentTime)) ;
+    var scale = mp3.currentTime/mp3.duration;
+    $(".course i").css("left", scale * 172+48 )
+}
 (function ($) {
     $.fn.drag = function (options) {
         var newOption = $.extend({}, options);
-        newOption.target = newOption.target || this;
+        newOption.target=newOption.target || this
+        newOption.min = newOption.min || -Infinity;
+        newOption.max = newOption.max || +Infinity;
         this.bind("mousedown", function (ev) {
-            var x = ev.clientX - newOption.target.offset().left;
+            var x = ev.clientX - newOption.target.position().left;
             $(document).bind("mousemove", function (ev) {
-                console.log(ev.clientX,x)
-                var l = ev.clientX - x-568;
-                if(l<10){
-                    l=10
+                var l = ev.clientX - x;
+                if(l<newOption.min){
+                    l=newOption.min
                 }
-                if(l>173){
-                    l=173
+                if(l>newOption.max){
+                    l=newOption.max
                 }
                 newOption.target.css({
                     left: l
                 })
+                var scale = l/newOption.max;
+                if(newOption.volume ){
+                    console.log(scale)
+                    mp3.volume =scale
+                }else {
+                    mp3.currentTime = scale * mp3.duration;
+                    nowTime();
+                }
             });
             $(document).bind("mouseup", function (ev) {
                 $(this).unbind("mouseup mousemove")
             })
+            return false;
         })
     }
 })(jQuery);
@@ -32,49 +50,42 @@ function zero(n){
 $(function(){
     var arrPic=["images/tfboy.png","images/baiwei.png","images/mingfei.png","images/qingchun.png","images/iamsinger.png"]
     var aImg=["images/play_btn.png","images/pause.png"];
-    var i;
-    var j;
-    var n;
     var timer=null;
+    var mp3= $("#mp3")[0]
     $(".play").data("onOff",true).click(function(){
         if($(this).data("onOff")){
+            mp3.pause();
+            clearInterval(timer);
             $(".logo").css("animationPlayState","paused");
             $(this).children()[0].src=aImg[1];
             $(this).data("onOff",false);
-            clearInterval(timer);
-            timer=null;
         }else {
+            mp3.play();
+            nowTime();
+            timer = setInterval(nowTime,1000);
             $(".logo").css("animationPlayState","running");
             $(this).children()[0].src=aImg[0];
             $(this).data("onOff",true);
-            move()
         }
     })
     $("#music-list li").click(function(){
-        i=0;
-        j=44;
-        n=0;
+        if(mp3.paused){
+            mp3.play();
+            nowTime();
+            timer = setInterval(nowTime,1000);
+        }
         $("#play").css("left",0);
         $(".logo img")[0].src=arrPic[$(this).index()];
-        move()
     })
-    $(".volume i").drag();
-    function move(){
-        if(timer)return
-        timer=setInterval(function(){
-            i++;
-            j++;
-            if(i==60){
-                n++;
-                i=0;
-            }
-            if(j>150){
-                clearInterval(timer);
-            }
-            $(".course i").css("left",j);
-            $(".play-time")[0].innerHTML=n+":"+zero(i);
-        },1000)
-    }
+    $(".course i").drag({
+        min:48,
+        max:179,
+    });
+    $(".volume i").drag({
+        min:10,
+        max:172,
+        volume :true
+    });
     $("#return").click(function(){
         window.location = "Menu.html";
     })

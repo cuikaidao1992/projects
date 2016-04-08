@@ -332,7 +332,7 @@ footer {
     background: #bababa;
     border-radius: 5px;
     margin-top: 13px;
-    margin-left: 42px;
+    margin-left: 46px;
 }
 
 #play .play-time {
@@ -358,7 +358,7 @@ footer {
     border-radius: 50%;
     position: absolute;
     top: 10px;
-    left: 40px;
+    left: 48px;
 }
 
 #play .img {
@@ -447,7 +447,7 @@ footer {
     height: 26px;
     position: absolute;
     bottom: -2px;
-    left: 10px;
+    left: 172px;
     background: url("../images/volume_btn.png") no-repeat
 }
 #return{width: 50px;height: 50px;position: absolute;bottom:18px;left:117px;border-radius:50%;z-index: 4;opacity: 0;}
