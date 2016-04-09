@@ -5,9 +5,16 @@ function changeTime(iNum) {
     return iM + ':' + iS;
 }
 function nowTime(){
+    var aImg=["images/play_btn.png","images/pause.png"];
     $(".play-time").html(changeTime(mp3.currentTime)) ;
     var scale = mp3.currentTime/mp3.duration;
-    $(".course i").css("left", scale * 172+48 )
+    $(".course i").css("left", scale * 133 );
+    if(mp3.ended){
+        $(".logo").css("animationPlayState","paused");
+        $(".play-time").html("00:00");
+        $(".play").data("onOff",false).children()[0].src=aImg[1];
+        $(".course i").css("left",0);
+    }
 }
 (function ($) {
     $.fn.drag = function (options) {
@@ -28,19 +35,18 @@ function nowTime(){
                 newOption.target.css({
                     left: l
                 })
-                var scale = l/newOption.max;
+                var scale = l/newOption.max
                 if(newOption.volume ){
-                    console.log(scale)
                     mp3.volume =scale
                 }else {
                     mp3.currentTime = scale * mp3.duration;
                     nowTime();
                 }
+                return false;
             });
             $(document).bind("mouseup", function (ev) {
                 $(this).unbind("mouseup mousemove")
             })
-            return false;
         })
     }
 })(jQuery);
@@ -49,7 +55,7 @@ function zero(n){
 }
 $(function(){
     var arrPic=["images/tfboy.png","images/baiwei.png","images/mingfei.png","images/qingchun.png","images/iamsinger.png"]
-    var aImg=["images/play_btn.png","images/pause.png"];
+    aImg=["images/play_btn.png","images/pause.png"];
     var timer=null;
     var mp3= $("#mp3")[0]
     $(".play").data("onOff",true).click(function(){
@@ -78,8 +84,8 @@ $(function(){
         $(".logo img")[0].src=arrPic[$(this).index()];
     })
     $(".course i").drag({
-        min:48,
-        max:179,
+        min:1,
+        max:133
     });
     $(".volume i").drag({
         min:10,
@@ -89,5 +95,4 @@ $(function(){
     $("#return").click(function(){
         window.location = "Menu.html";
     })
-
 })
